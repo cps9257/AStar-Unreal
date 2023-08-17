@@ -66,7 +66,8 @@ function d(source, target)
 ```
 
 #### Demo
-![](https://drive.google.com/file/d/1qnx22U3OfHAYbx9AgQhPbiq72UTPg5d6/view?usp=drive_link)
+
+https://github.com/cps9257/AStar-Unreal/assets/15887567/f9836262-1209-4814-a5cc-34e8dbfff55e
 
 #### References
 
