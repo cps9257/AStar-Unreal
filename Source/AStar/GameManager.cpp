@@ -51,6 +51,7 @@ map<int, AGridNode*> AGameManager::CreateMap(FIntPoint mapSize)
 			AGridNode* newNode = GetWorld()->SpawnActor<AGridNode>(gridNode, FVector::ZeroVector, FRotator::ZeroRotator, SpawnInfo);
 			newNode->Initialize(coordinate, isObstacle);
 			newNode->Render(isObstacle ? GridNodeState::Obstacle : GridNodeState::None);
+
 			FVector initPos = { i * newNode->GridSize.X, j * newNode->GridSize.Y, GRID_SIZE_Z };
 			newNode->SetActorLocation(initPos);
 			newNode->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);

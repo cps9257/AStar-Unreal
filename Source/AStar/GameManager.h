@@ -33,19 +33,7 @@ public:
 		TSubclassOf<AActor> gridNode;
 
 	UPROPERTY(EditAnywhere)
-		FIntPoint playerStartCoordinate;
-
-	UPROPERTY(EditAnywhere)
-		FIntPoint enemyStartCoordinate;
-
-	UPROPERTY(EditAnywhere)
 		TArray<FIntPoint> obstacles;
-
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<ACharacter> playerMaster;
-
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<ACharacter> enemyMaster;
 
 	UPROPERTY(EditAnywhere)
 		AActor* camera;
@@ -58,6 +46,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void FindPath(FIntPoint startPos, FIntPoint targetPos);
+
 private:
 	float const GRID_SIZE_Z = 200.0f;
 	float const NODE_POSITION_Z = 266.0f;
@@ -68,10 +58,7 @@ private:
 
 	map<int, AGridNode*> CreateMap(FIntPoint mapSize);
 	void ClearMap(map<int, AGridNode*> map);
-	/*void CreatePlayerMaster(FIntPoint initCoordinate);
-	void CreateEnemyMaster(FIntPoint initCoordinate);*/
 
-	void FindPath(FIntPoint startPos, FIntPoint targetPos);
 	vector<AGridNode*> ReconstructPath(AGridNode* targetNode);
 	vector<AGridNode*> FindPath(map<int, AGridNode*> map, FIntPoint startPos, FIntPoint targetPos);
 
