@@ -51,16 +51,16 @@ vector<Node*> AStar(Node* start, Node* target){
 vector<Node*> ReconstructPath(Node* target)
 {
     vector<Node*> path;
-	Node* current = target;
+    Node* current = target;
 
-	while (current != nullptr) {
-		path.push_back(current);
-		current = current->Parent;
-	}
+    while (current != nullptr) {
+        path.push_back(current);
+        current = current->Parent;
+    }
 
-	reverse(path.begin(), path.end());
+    reverse(path.begin(), path.end());
 
-	return path;
+    return path;
 }
 
 ```
